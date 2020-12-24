@@ -1,0 +1,61 @@
+{% extends 'myApp/base.html' %}
+
+{% load static %}
+{% block style %}
+    <link rel="stylesheet" type="text/css" href="{% static 'myApp/css/main.css' %}">
+{% endblock style %}
+
+{% block content %}
+    {% include 'myApp/header.html' %}
+
+    <div class="card-wrapper" id="expired">
+        <h2>이미 지난 일정입니다</h2>
+
+        {% if not expired %}
+        <p>일정이 없습니다</p>
+        {% endif %}
+
+        {% for to_do in expired %}
+            <div class="card">
+                <a href="{% url 'delete' to_do.id %}"><button class="delete-btn"></button></a>
+                <h3>{{ to_do.name }}</h3>
+                <span class="due-date">{{ to_do.due_date }} 까지</span>
+                <p>{{ to_do.desc }}</p>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="card-wrapper" id="prompt">
+        <h2>서두르셔야 합니다</h2>
+
+        {% if not prompt %}
+        <p>일정이 없습니다</p>
+        {% endif %}
+
+        {% for to_do in prompt %}
+            <div class="card">
+                <a href="{% url 'delete' to_do.id %}"><button class="delete-btn"></button></a>
+                <h3>{{ to_do.name }}</h3>
+                <span class="due-date">{{ to_do.due_date }} 까지</span>
+                <p>{{ to_do.desc }}</p>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="card-wrapper" id="normal">
+        <h2>여유가 있습니다</h2>
+
+        {% if not normal %}
+        <p>일정이 없습니다</p>
+        {% endif %}
+
+        {% for to_do in normal %}
+            <div class="card">
+                <a href="{% url 'delete' to_do.id %}"><button class="delete-btn"></button></a>
+                <h3>{{ to_do.name }}</h3>
+                <span class="due-date">{{ to_do.due_date }} 까지</span>
+                <p>{{ to_do.desc }}</p>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

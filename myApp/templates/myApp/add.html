@@ -1,0 +1,15 @@
+{% extends 'myApp/base.html' %}
+
+{% load static %}
+
+{% block style %}
+    <link rel="stylesheet" type="text/css" href="{% static 'myApp/css/form.css' %}">
+{% endblock style %}
+
+{% block content %}
+    <form actino="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="추가">
+    </form>
+{% endblock %}

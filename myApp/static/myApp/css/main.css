@@ -1,0 +1,58 @@
+
+#add{
+    font-size: 1.5em;
+    font-weight: bold;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+#add a{
+    text-decoration: none;
+    color: black;
+}
+#add a:hover {
+    color: green;
+}
+
+.card-wrapper {
+    border: 1px solid black;
+    margin-bottom: 50px;
+    padding: 1em;
+}
+.card-wrapper h2 {
+    border-bottom: 1px solid black;
+}
+
+#expired {
+    background-color: #FFB4BE;
+}
+#prompt {
+    background-color: #F4FFD9;
+}
+#normal {
+    background-color: #95C2FF;
+}
+
+.card {
+    margin: 1em;
+    padding: 2em;
+    background-color: #FBFDFF;
+}
+.card h3 {
+    display: inline-block;
+}
+.card .due-date {
+    float: right;
+}
+
+
+.delete-btn {
+    float: right;
+    width: 30px;
+    height: 30px;
+    background-image: url("../images/trash.png");
+    background-size: cover;
+    margin-left: 5px;
+    border-radius: 15px;
+    cursor: pointer;
+}
